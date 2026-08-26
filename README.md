@@ -4,6 +4,14 @@ Questo programma permette di calcolare le dosi totali di cibo per un menù, tene
 Le dosi sono basate sugli standard SINU (Società Italiana di Nutrizione Umana).   
 È stato creato per aiutare la pattuglia di Cambusa di un campo scout.
 
+Per aprirlo in locale:  
+```
+pip install streamlit
+```
+```
+python -m streamlit run app.py
+```
+
 ---
 
 © 2025 - Realizzato da Anna Sofia Moro   
