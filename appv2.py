@@ -80,6 +80,10 @@ st.session_state.setdefault("fasce_extra", [])  # fasce d'età personalizzate
 
 st.title("🍽️🐞 Calcolatore dosi menù")
 st.write("Calcola le dosi secondo gli standard **SINU**, per un singolo alimento o per un menù completo.")
+st.caption(
+    "📚 Dosi basate su: [Standard Quantitativi delle Porzioni – SINU]"
+    "(https://sinu.it/wp-content/uploads/2025/01/Standard-Quantitativi-delle-Porzioni.pdf)"
+)
 
 modalita = st.radio(
     "Cosa vuoi fare?",
@@ -343,10 +347,19 @@ else:
         except ImportError:
             st.caption("💡 Installa `fpdf2` (`pip install fpdf2`) per abilitare anche l'export in PDF.")
 
-st.markdown("---")
-st.markdown(
-    """
-    © 2026 - Realizzato da *Anna Sofia Moro*
-    📧 Contatti per suggerimenti: [annasofiamoro@gmail.com](mailto:annasofiamoro@gmail.com)
-    """
-)
+st.divider()
+foot_col1, foot_col2 = st.columns(2)
+with foot_col1:
+    st.markdown("**🐞 Calcolatore dosi menù**")
+    st.caption("Realizzato da *Anna Sofia Moro* · © 2026")
+    st.caption("📧 Contatti per suggerimenti: [annasofiamoro@gmail.com](mailto:annasofiamoro@gmail.com)")
+with foot_col2:
+    st.markdown("**📚 Fonti**")
+    st.caption(
+        "Le dosi sono basate sugli standard nazionali LARN/SINU "
+        "(Società Italiana di Nutrizione Umana):"
+    )
+    st.caption(
+        "[Standard Quantitativi delle Porzioni – SINU (PDF)]"
+        "(https://sinu.it/wp-content/uploads/2025/01/Standard-Quantitativi-delle-Porzioni.pdf)"
+    )
